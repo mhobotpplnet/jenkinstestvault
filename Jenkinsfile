@@ -10,7 +10,7 @@ stages {
   export VAULT_ADDR=http://vault:8200
   export VAULT_SKIP_VERIFY=true
   export SECRET_ID=$(./vault write -field=secret_id -f auth/approle/role/java-example/secret-id)
-  export JOB_VAULT_TOKEN=$(./vault write -field=token auth/approle/login role_id=${ROLE_ID}   secret_id=${SECRET_ID})
+  export JOB_VAULT_TOKEN=$(vault write -field=token auth/approle/login role_id=${ROLE_ID}   secret_id=${SECRET_ID})
 ./vault read -address=http://vault:8200 secret/hello 
         '''
     }
