@@ -1,7 +1,7 @@
 node {
   // define the secrets and the env variables
   def secrets = [
-      [$class: 'VaultSecret', path: 'secret/testing', secretValues: [
+      [$class: 'VaultSecret', path: 'secret/skol', secretValues: [
           [$class: 'VaultSecretValue', envVar: 'testing', vaultKey: 'value_one'],
           [$class: 'VaultSecretValue', envVar: 'testing_again', vaultKey: 'value_two']]],
       [$class: 'VaultSecret', path: 'secret/another_test', secretValues: [
